@@ -1,36 +1,89 @@
+
 body{
-    background-color: antiquewhite;
+  margin:0;
+  background-color:#E7D2CC;
+}
+.timer-title{
+  display: flex;
+  justify-content: space-around; 
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  margin-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color:#660d66;
+  color:#75E6DA;
+  font-weight: bold;
+  font-size: 22px;
+  border: 5px solid #FCB5AC;
+  border-radius:15px;
+} 
+
+.timer {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding: 24;
+  color:#C3E0E5;
+  font-weight: bold;
+  font-size: 48px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
+.timer-block {
+  display: flex;
+  border: 3px solid #C3E0E5;
+  background-color:#167D7F;
+  border-radius: 15px;
+  padding:15px 17px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .holliday__timer{
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 10px; 
+  margin-right: 10px;
+  padding-left: 5px;
+  /* display: flex; */
+  /* justify-content: space-around;
+  border: solid 2px;
+  height: 300px;
+};
+
 .timer{
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-    align-items: center;
-    width: 100%;
-    height: 300px;
-    background: red;
-    color: goldenrod;
-    box-shadow: 0 4px 20px rgba(21, 2, 8, 0.161);
-    font-size: 36px;
-    font-weight: 400px;
-    text-align: center;
-    font-family: Roboto,sans-serif;
+   background-color:blanchedalmond;
+       
 };
+
 .title {
-    display: block;
-    padding-left: 20px;
-    font-size: 36px;
-    font-weight: 400px;
-    text-align: center;
-    font-family: Roboto,sans-serif;
-};
-/* .timer__block{
-        display: block;
-        width: 102px;
-        height: 120px;
-        justify-content: space-between;
-        text-align: center;
-}; */
+    background-color :brown;
+    padding-top: 5px;
+    width: 20%;
+}; 
+
+.timer__block{
+        border: solid 1px;
+}; */ 

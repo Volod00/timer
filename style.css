@@ -87,6 +87,13 @@ margin-right: 5px;
   text-align: justify;
 }
 
+.menu__item-cost{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: bold;
+   font-size:20px;
+}
+
+
 /* modal */
 .modal {
   display: block;
@@ -104,6 +111,9 @@ margin-right: 5px;
   color: whitesmoke;
 }
 
+.close-modal-btn-container{
+  text-align: right;
+}
 
 .modal-close-btn {
 font-size: 22px;
@@ -137,4 +147,11 @@ color: whitesmoke;
   text-align: justify;
   padding: 5px;
   color:#E7D2CC;
+}
+
+.modal-btn-container{
+  display:flex;
+  justify-content: space-evenly;
+  padding: 8px;
+
 }

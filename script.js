@@ -125,6 +125,8 @@ new TravelMenu(
 
 const closeBtn = document.querySelector("#modal-close-btn");
 const modal = document.getElementById("modal");
+const form = document.querySelector("#form");
+const text = document.querySelector("#modal-inner");
 
 setTimeout(function () {
   modal.style.display = "inline";
@@ -132,4 +134,15 @@ setTimeout(function () {
 
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
+});
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  text.innerHTML = `<div class="modal-inner-loading">
+  <img src="images/adventure.png" class="loading">
+  <p id="uploadText">
+      Thanky fo your registration...
+  </p>
+</div>`;
+  modal.style.backgroundColor = "pink";
 });

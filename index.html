@@ -43,12 +43,15 @@
             <p class="modal-text" id="modal-text"> A company travel policy should include a purpose statement, scope, authorization and reimbursement section, and travel arrangement processes. Creating a detailed company travel policy will help ensure all business trips run smoothly, are secured ahead of time, and adhere to all company requirements.</p>				
         </div>
         <form id="form">
-            <input type="text" name="fullName" placeholder="Enter your full name" required/>
+         <div class="form-input">
+            <input type="text"  name="fullName" placeholder="Enter your full name" required/>
             <input type="email" name="email" placeholder="Enter your email" required/>
-        <div class="modal-btn-container"> 
-             <button type="submit">Accept</button>
-             <button>Reject</button>
-        </div>
+         </div>
+        <div class="modal-btn">
+            <button class="modal-btn" id="modal-btn-accept" type="submit">Accept</button>
+            <button class="modal-btn" id="modal-btn-reject" type="submit">Reject</button>
+         </div>
+        </form>
     </div>
 
     <script src="script.js"></script>

@@ -127,10 +127,11 @@ const closeBtn = document.querySelector("#modal-close-btn");
 const modal = document.getElementById("modal");
 const form = document.querySelector("#form");
 const text = document.querySelector("#modal-inner");
+const loginForm = document.querySelector("#form");
 
 setTimeout(function () {
-  modal.style.display = "inline";
-}, 1500);
+  modal.style.display = "block";
+}, 2500);
 
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
@@ -139,10 +140,31 @@ closeBtn.addEventListener("click", () => {
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   text.innerHTML = `<div class="modal-inner-loading">
-  <img src="images/adventure.png" class="loading">
-  <p id="uploadText">
-      Thanky fo your registration...
-  </p>
-</div>`;
+                  <img src="images/adventure.png" class="loading">
+                  <p id="uploadText">
+                      Thanky fo your registration...
+                  </p>
+                </div>`;
   modal.style.backgroundColor = "pink";
+
+  setTimeout(function () {
+    document.querySelector(
+      "#uploadText"
+    ).innerText = `Your data is processed...`;
+    modal.style.backgroundColor = "blue";
+  }, 2000);
+
+  const loginData = new FormData(form);
+  const name = loginData.get("fullName");
+  const mail = loginData.get("email");
+
+  setTimeout(function () {
+    document.querySelector("#modal-inner").innerHTML = `
+                          <h2>Thanks <span class="modal-display-name">${name}</span> </h2>
+                          <p>We will send confirmation on your mail: <span class="modal-display-name">${mail}</span></p>
+                          <div>
+                              <img src="images/plane.jpg" class="plane-logo">
+                          </div>
+                          `;
+  }, 5000);
 });

@@ -15,7 +15,7 @@ body{
   margin-bottom: 10px;
   padding-left: 3px;
   padding-right: 3px;
-  background-color:#660d66;
+  background-color:#0C2D48;
   color:#75E6DA;
   font-weight: bold;
   font-size: 22px;
@@ -24,25 +24,62 @@ body{
 
 .img-logo{
   width: 110px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  border-radius:35px;
-  opacity: 0.6;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius:40px;
+  opacity: 0.4;
+}
+
+#logo-title{
+  margin-right: auto;
+  font-size: 56px;
+  font-family:Arial, Helvetica, sans-serif;
+  width: 900px;
+}
+
+#logo-name{
+  color:#EDF0EE;
+}
+
+#logo_title_small{
+ text-align: center;
+  font-size: 39px;
+}
+
+/* timer  */
+
+.time-title{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .head-title{
-text-align: center;
-color:#660d66;
+color:#145DA0;
 font-weight: bold;
-font-size: 28px;
+font-size: 32px;
 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#btn-reverse{
+  font-size: 10px;
+  border-radius: 15px;
+  height: 40px;
+  width: 80px;
+  margin-top: auto;
+  margin-bottom: 3px;
+  color: #167D7F;
+  background-color:aliceblue;
+}
 
-/* timer  */
 .timer {
   display: flex;
   justify-content: center;
+}
+
+.reverse{
+  flex-direction: row-reverse;
 }
 
 .img-timer{
@@ -108,8 +145,8 @@ margin-right: 5px;
   border:solid 3px grey;
   border-radius: 15px;
   box-shadow: 0px 0px 6px 2px #666;
-  background-color: #212529;
-  color: whitesmoke;
+  background-color: #868B8E;
+  color:#E7D2CC;
   height: 400px;
 }
 
@@ -139,7 +176,9 @@ color: whitesmoke;
 
 .modal-inner{
   text-align: center;
-  color:#DDFFE7;
+  color:#75E6DA;
+  font-size: 24px;
+  font-family: ;
 }
 
 .modal-text{
@@ -150,6 +189,7 @@ color: whitesmoke;
   text-align: justify;
   padding: 8px;
   color:#E7D2CC;
+  margin-top: 0px;
 }
 
 .form-input{
@@ -158,9 +198,7 @@ color: whitesmoke;
 }
 .modal-btn{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+  text-align: center;
 }
 
 #modal-btn-accept{

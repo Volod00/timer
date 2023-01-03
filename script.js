@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const deadline = "2023-01-01";
+  const deadline = "2024-01-01";
 
   function start(endtime) {
     const currentTime = Date.parse(endtime) - Date.parse(new Date());
@@ -53,7 +53,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   setTime(".timer", deadline);
 });
+// reverse timer
+const btnReverse = document.querySelector("#btn-reverse");
+const timer = document.querySelector(".timer");
 
+btnReverse.addEventListener("click", function () {
+  timer.classList.toggle("reverse");
+});
+
+// travel-container
 class TravelMenu {
   constructor(src, alt, title, descripton, cost, parentSelector) {
     this.src = src;
@@ -128,10 +136,11 @@ const modal = document.getElementById("modal");
 const form = document.querySelector("#form");
 const text = document.querySelector("#modal-inner");
 const loginForm = document.querySelector("#form");
+const rejectBtn = document.querySelector("#modal-btn-reject");
 
 setTimeout(function () {
   modal.style.display = "block";
-}, 2500);
+}, 2000);
 
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
@@ -145,13 +154,14 @@ form.addEventListener("submit", function (e) {
                       Thanky fo your registration...
                   </p>
                 </div>`;
-  modal.style.backgroundColor = "pink";
+  modal.style.backgroundColor = "#E7D2CC";
+  form.style.display = "none";
 
   setTimeout(function () {
     document.querySelector(
       "#uploadText"
     ).innerText = `Your data is processed...`;
-    modal.style.backgroundColor = "blue";
+    modal.style.backgroundColor = "#5885AF";
   }, 2000);
 
   const loginData = new FormData(form);
@@ -167,4 +177,9 @@ form.addEventListener("submit", function (e) {
                           </div>
                           `;
   }, 5000);
+  closeBtn.disabled = false;
+});
+
+rejectBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });

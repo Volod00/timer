@@ -9,12 +9,16 @@
 <body>
     <div class="title">
         <img src="images/cute-rabbit.jpg" alt="logo" class="img-logo">
-        <h2>Travel Company - White Rabit</h2>
-        <h3>Make your journey memorable!</h3>
+        <h1 id="logo-title">Travel Company-<span id="logo-name" style="color:#EDF0EE">"White Rabit"</span></h1>
+        <h3 id="logo_title_small" style="color: antiquewhite;">Make your journey memorable!</h3>
      </div>
     
-    <h1 class="head-title">Time left till the end of year!</h1>
-    
+<!-- timer -->
+    <div class="time-title"> 
+        <h1 class="head-title">Time left till the end of year!</h1>
+        <button id="btn-reverse">reverse timer</button> 
+    </div>
+
     <div class="timer">
         <div class="timer-block">
         <span id="days">days</span>days
@@ -34,9 +38,11 @@
         <div class="container"></div>
     </div>
 
+
+<!-- modal window -->
     <div class="modal" id="modal">
         <div class="close-modal-btn-container">
-            <button class="modal-close-btn" id="modal-close-btn">X</button>
+            <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
         </div>  
         <div class="modal-inner" id="modal-inner">
             <h2>Travel policy</h2>
@@ -48,8 +54,8 @@
             <input type="email" name="email" placeholder="Enter your email" required/>
          </div>
         <div class="modal-btn">
-            <button class="modal-btn" id="modal-btn-accept" type="submit">Accept</button>
-            <button class="modal-btn" id="modal-btn-reject" type="submit">Reject</button>
+            <button  id="modal-btn-accept" type="submit">Accept</button>
+            <button  id="modal-btn-reject" type="button">Reject</button>
          </div>
         </form>
     </div>

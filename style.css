@@ -82,13 +82,6 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   flex-direction: row-reverse;
 }
 
-.img-timer{
-  width: 300px;
-  height: 330px;
-  border:solid 3px #B6E2D3;
-  border-radius:20px;
-}
-
 .timer-block {
   display: flex;
   border: 4px solid #C3E0E5;
@@ -104,6 +97,21 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* item menu */
+#order-title{
+color: #0C2D48;
+text-align: center;
+font-size: 48px;
+font-weight: 600;
+font-style: italic;
+}
+
+.img-order{
+  width: 350px;
+  height: 330px;
+  border:solid 3px #145DA0;
+  border-radius:20px;
+}
+
 .container{
   display: flex;
   
@@ -112,7 +120,6 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 margin-left:5px;
 margin-right: 5px;
 }
-
 .item-subtitle {
   font-weight: bold;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -124,7 +131,6 @@ margin-right: 5px;
   font-size: 18px;
   text-align: justify;
 }
-
 .menu__item-cost{
    font-family: Georgia, 'Times New Roman', Times, serif;
    font-weight: bold;

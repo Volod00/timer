@@ -82,7 +82,7 @@ class TravelMenu {
     const element = document.createElement("div");
     element.innerHTML = `
             <div class="menu__item">
-                <img src=${this.src} alt=${this.alt} class="img-timer">
+                <img src=${this.src} alt=${this.alt} class="img-order">
                 <h3 class="item-subtitle">${this.title}</h3>
                 <div class="item-descr">${this.descripton}</div>
                 <div class="menu__item-divider"></div>
@@ -109,7 +109,7 @@ new TravelMenu(
   "Europe",
   "Poland",
   "Krakow is a must-see at any time of year but, as a Christmas destination, the city is up there with the best European cities. The short days and cold nights are the perfect excuse to warm up with mulled wine and indulge in some hearty Polish food, which you can find in abundance at the cosy Christmas market.",
-  150,
+  200,
   ".trip .container"
 ).render();
 
@@ -131,6 +131,16 @@ new TravelMenu(
   ".trip .container"
 ).render();
 
+new TravelMenu(
+  "images/mexico.jpg",
+  "Mexico City",
+  "Mexica",
+  "Tourists visiting Mexico City at Christmas will find plenty of cool stuff going on. Head to the Zocalo for the most public celebrations. In the square, you'll find an ice skating rink and a man-made sledding hill for kids and adults alike. It's a pretty fun little obstacle course that they set up each year.",
+  750,
+  ".trip .container"
+).render();
+
+// modal window
 const closeBtn = document.querySelector("#modal-close-btn");
 const modal = document.getElementById("modal");
 const form = document.querySelector("#form");

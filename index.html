@@ -15,8 +15,8 @@
     
 <!-- timer -->
     <div class="time-title"> 
-        <h1 class="head-title">Time left till the end of year!</h1>
-        <button id="btn-reverse">reverse timer</button> 
+        <h1 class="head-title">Time left till the end of year:</h1>
+        <!-- <button id="btn-reverse">reverse timer:</button>  -->
     </div>
 
     <div class="timer">
@@ -32,35 +32,73 @@
         <div class="timer-block">
         <span id="seconds">seconds</span>seconds
         </div>
+        <button id="btn-reverse">reverse timer</button>
     </div>
     
 <!-- order window -->
     <div class="trip">
-        <h1 id="order-title"> Experience travel with our service will make you return!!</h1>
+        <h1 id="order-title"> Your happines is our business 🧙 You just choose the destination!</h1>
         <div class="container"></div>
     </div>
+
+<!-- choose which country you are -->
+<h2> Select which country You are </h2>
+<div class="controls-container">
+        <div class="emotion-radios" id="emotion-radios"></div>
+            <div class="gifs-check">
+            <label for="gifs-only-option" class="gifs-check-label">Animated GIFs only</label>
+            <input type="checkbox" id="gifs-only-option">
+        </div>
+        <button class="get-image-btn" id="get-image-btn">Get Image</button>
+</div>
+
 
 <!-- modal window -->
     <div class="modal" id="modal">
         <div class="close-modal-btn-container">
             <button class="modal-close-btn" id="modal-close-btn" disabled>X</button>
         </div>  
-        <div class="modal-inner" id="modal-inner">
-            <h2>Travel policy</h2>
-            <p class="modal-text" id="modal-text"> A company travel policy should include a purpose statement, scope, authorization and reimbursement section, and travel arrangement processes. Creating a detailed company travel policy will help ensure all business trips run smoothly, are secured ahead of time, and adhere to all company requirements.</p>				
+            <div id="policy-content">
+                <h2>Travel policy</h2>
+                <p class="modal-text" id="modal-text"> A company travel policy should include a purpose statement, scope, authorization and reimbursement section, and travel arrangement processes. Creating a detailed company travel policy will help ensure all business trips run smoothly, are secured ahead of time, and adhere to all company requirements.</p>	
+            </div>
+            <div class="modal-inner" id="modal-inner">
+                <div class="modal-inner-loading">
+                    <img src="images/adventure.png" class="loading">
+                    <p id="uploadText">
+                        Thanky fo your registration...
+                    </p>
+                  </div>
+              <div id="thanks-content">
+                <h2>Thanks <span class="modal-display-name" id="your-name"></span> </h2>
+                <p>We will send confirmation on your mail: <span class="modal-display-name" id="your-email"></span></p>
+                <div>
+                    <img src="images/plane.jpg" class="plane-logo">
+                </div>
+            </div>
         </div>
         <form id="form">
          <div class="form-input">
             <input type="text"  name="fullName" placeholder="Enter your full name" required/>
             <input type="email" name="email" placeholder="Enter your email" required/>
          </div>
-        <div class="modal-btn">
+        
+         <!-- <div class="modal-btn hidden" id="modal-prompt">
+         </div>
+         <div class="modal-btn hidden" id="modal-result">
+         </div>
+         <div class="modal-btn hidden" id="modal-failed">
+         </div> -->
+
+        <div class="modal-btn" id="buttons">
             <button  id="modal-btn-accept" type="submit">Accept</button>
             <button  id="modal-btn-reject" type="button">Reject</button>
          </div>
+
         </form>
     </div>
 
-    <script src="script.js"></script>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>

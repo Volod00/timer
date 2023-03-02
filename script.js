@@ -123,15 +123,6 @@ new TravelMenu(
 ).render();
 
 new TravelMenu(
-  "images/New-York.jpg",
-  "USA",
-  "USA",
-  "December is a wonderful time to visit Paris. The weather is cold and crisp, but the city is in full swing, with busy cafés, beautiful lights & decorations on the streets, and an interesting cultural program for locals and visitors alike.",
-  1050,
-  ".trip .container"
-).render();
-
-new TravelMenu(
   "images/mexico.jpg",
   "Mexico City",
   "Mexica",
@@ -140,15 +131,25 @@ new TravelMenu(
   ".trip .container"
 ).render();
 
+new TravelMenu(
+  "images/New-York.jpg",
+  "USA",
+  "USA",
+  "December is a wonderful time to visit Paris. The weather is cold and crisp, but the city is in full swing, with busy cafés, beautiful lights & decorations on the streets, and an interesting cultural program for locals and visitors alike.",
+  1050,
+  ".trip .container"
+).render();
+
 // modal window
 const closeBtn = document.querySelector("#modal-close-btn");
-const modal = document.getElementById("modal");
+const modal = document.querySelector(".modal");
+const policyContent = document.getElementById("policy-content");
+const modalInnerText = document.querySelector('.modal-inner-loading');
+const thanksContent = document.getElementById("thanks-content");
 const form = document.querySelector("#form");
-const text = document.querySelector("#modal-inner");
-const loginForm = document.querySelector("#form");
 const rejectBtn = document.querySelector("#modal-btn-reject");
 
-setTimeout(function () {
+setTimeout(function() {
   modal.style.display = "block";
 }, 2000);
 
@@ -158,38 +159,36 @@ closeBtn.addEventListener("click", () => {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  text.innerHTML = `<div class="modal-inner-loading">
-                  <img src="images/adventure.png" class="loading">
-                  <p id="uploadText">
-                      Thanky fo your registration...
-                  </p>
-                </div>`;
-  modal.style.backgroundColor = "#E7D2CC";
+
+  modal.style.backgroundColor = "blue";
   form.style.display = "none";
+  policyContent.style.display = 'none';
+  modalInnerText.style.display = "block";
 
   setTimeout(function () {
-    document.querySelector(
+      document.querySelector(
       "#uploadText"
     ).innerText = `Your data is processed...`;
     modal.style.backgroundColor = "#5885AF";
-  }, 2000);
+  }, 3000);
 
   const loginData = new FormData(form);
   const name = loginData.get("fullName");
   const mail = loginData.get("email");
 
   setTimeout(function () {
-    document.querySelector("#modal-inner").innerHTML = `
-                          <h2>Thanks <span class="modal-display-name">${name}</span> </h2>
-                          <p>We will send confirmation on your mail: <span class="modal-display-name">${mail}</span></p>
-                          <div>
-                              <img src="images/plane.jpg" class="plane-logo">
-                          </div>
-                          `;
+    modalInnerText.style.display = "none";
+    thanksContent.style.display = "block";
+    document.querySelector("#your-name").innerText = name
+    document.querySelector("#your-email").innerText = mail
   }, 5000);
+
   closeBtn.disabled = false;
 });
 
 rejectBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
+
+
+

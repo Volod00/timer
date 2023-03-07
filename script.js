@@ -113,11 +113,23 @@ for (let countryIndex = 0; countryIndex < countries.length; countryIndex++){
 //countryPicker
 const emotionRadios = document.querySelector('#emotion-radios');
 
+emotionRadios.addEventListener('change', highlightingOption);
+
+function highlightingOption (e){
+      let emotionItems = document.getElementsByClassName('radio')
+      for(let emotionItem of emotionItems){      
+        emotionItem.classList.remove('highlight')
+        }
+        document.getElementById(e.target.id).parentElement.classList.add('highlight')
+    }
+
 function getEmotion(param){
         const emotionArray = [];
         for (let country of param) {
                for (let emotion of country.tags){
+                if (!emotionArray.includes(emotion)){
                   emotionArray.push(emotion)
+                }
             }
           }
           return emotionArray;

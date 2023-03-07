@@ -43,6 +43,14 @@ let countryData = [
                     alt: "Latvia",
                     text: "Something you never forget",
                 },
+                {
+                    tags: ["active",'dominant'],
+                    isGif: true,
+                    image: "./country_images/Norway-Ski.jpg",
+                    alt: "Norway",
+                    text: "Start now",
+                },
+
 
                 
             

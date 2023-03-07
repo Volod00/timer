@@ -1,6 +1,9 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const deadline = "2024-01-01";
+import countries from "./travelMenuData.js"
+import countryData from "./countryPicker.js"
 
+window.addEventListener("DOMContentLoaded", () => {
+ 
+  const deadline = "2024-01-01";
   function start(endtime) {
     const currentTime = Date.parse(endtime) - Date.parse(new Date());
     const days = Math.floor(currentTime / (1000 * 60 * 60 * 24));
@@ -52,8 +55,8 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   setTime(".timer", deadline);
-});
-// reverse timer
+
+  // reverse timer
 const btnReverse = document.querySelector("#btn-reverse");
 const timer = document.querySelector(".timer");
 
@@ -95,50 +98,55 @@ class TravelMenu {
     this.parentSelector.append(element);
   }
 }
-new TravelMenu(
-  "images/prague.jpg",
-  "Europe",
-  "Chech Republic",
-  "Prague is famous for its cultural life. Wolfgang Amadeus Mozart lived there, and his Prague Symphony and Don Giovanni were first performed in the city.",
-  250,
-  ".trip .container"
-).render();
 
-new TravelMenu(
-  "images/krakow.jpg",
-  "Europe",
-  "Poland",
-  "Krakow is a must-see at any time of year but, as a Christmas destination, the city is up there with the best European cities. The short days and cold nights are the perfect excuse to warm up with mulled wine and indulge in some hearty Polish food, which you can find in abundance at the cosy Christmas market.",
-  200,
-  ".trip .container"
-).render();
+for (let countryIndex = 0; countryIndex < countries.length; countryIndex++){
+  new TravelMenu(
+    countries[countryIndex].src,
+    countries[countryIndex].alt,
+    countries[countryIndex].title,
+    countries[countryIndex].descripton,
+    countries[countryIndex].cost,
+    ".trip .container"
+  ).render();
+}
 
-new TravelMenu(
-  "images/paris.jpg",
-  "Europe",
-  "France",
-  "December is a wonderful time to visit Paris. The weather is cold and crisp, but the city is in full swing, with busy cafés, beautiful lights & decorations on the streets, and an interesting cultural program for locals and visitors alike.",
-  650,
-  ".trip .container"
-).render();
+//countryPicker
+const emotionRadios = document.querySelector('#emotion-radios');
 
-new TravelMenu(
-  "images/mexico.jpg",
-  "Mexico City",
-  "Mexica",
-  "Tourists visiting Mexico City at Christmas will find plenty of cool stuff going on. Head to the Zocalo for the most public celebrations. In the square, you'll find an ice skating rink and a man-made sledding hill for kids and adults alike. It's a pretty fun little obstacle course that they set up each year.",
-  750,
-  ".trip .container"
-).render();
+function getEmotion(param){
+        const emotionArray = [];
+        for (let country of param) {
+               for (let emotion of country.tags){
+                  emotionArray.push(emotion)
+            }
+          }
+          return emotionArray;
+       };
 
-new TravelMenu(
-  "images/New-York.jpg",
-  "USA",
-  "USA",
-  "December is a wonderful time to visit Paris. The weather is cold and crisp, but the city is in full swing, with busy cafés, beautiful lights & decorations on the streets, and an interesting cultural program for locals and visitors alike.",
-  1050,
-  ".trip .container"
-).render();
+function renderEmotionsList(param){
+        let radioItems =``;
+        const emotionList =  getEmotion(param);
+        for (let emotion of emotionList){
+          radioItems+=`
+          <div class="radio">
+            <label for="${emotion}">${emotion}</label>
+            <input
+                type="radio"
+                id="${emotion}"
+                value="${emotion}"
+                name="emotions"
+                >
+          </div>`
+        }
+        emotionRadios.innerHTML = radioItems
+     };
+renderEmotionsList(countryData);
+
+
+
+
+
+
 
 // modal window
 const closeBtn = document.querySelector("#modal-close-btn");
@@ -190,5 +198,8 @@ rejectBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
+fetch('db.json')
+.then(data =>data.json())
+.then(res => console.log(res));
 
-
+});

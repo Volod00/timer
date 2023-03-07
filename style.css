@@ -112,10 +112,14 @@ font-style: italic;
   border-radius:20px;
 }
 
+.scrollmenu{
+  overflow: auto;
+ }
+
 .container{
   display: flex;
-  
 }
+
 .menu__item{
 margin-left:5px;
 margin-right: 5px;
@@ -137,6 +141,31 @@ margin-right: 5px;
    font-size:20px;
 }
 
+/* country picker section */
+.features{
+ display: flex;
+ justify-content: space-between;
+ padding: 0px 7px 0px 7px;
+ background-color:#9599E2;
+ color:#131313;
+ font-size: 26px;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ font-weight: 300;
+}
+
+.emotion-radios {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #bcbcbc;
+  border-radius: 5px;
+}
+
+.radio{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bcbcbc;
+  padding: 4px 8px;
+}
 
 /* modal */
 .modal {

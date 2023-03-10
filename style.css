@@ -194,15 +194,47 @@ label{
   accent-color: #bd301d;
 }
 
-.get-image-btn{
-  background-color: #67595e;
-  color: #eed6d3;
-  padding: 15px 19px;
-  font-size: 24px;
-  border: none;
+.meme-modal{
+  display: none; /*flex when displayed*/
+  position: fixed;
+  margin: auto;
+  top: 80px;
+  left: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #67595e;
   border-radius: 5px;
-  margin-bottom: 8px;
+  width: 420px;
+  height: 490px;
+  background-color: #fff0ee;
 }
+
+.meme-modal-inner{
+  display: flex;
+  flex:column;
+  padding: auto;
+}
+
+.meme-close-btn{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  background-color: transparent;
+  border: 2px solid #555;
+  color: #555;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.country-img{
+  max-width: 340px;
+  max-height: 420px;
+  border-radius: 5px;
+}
+
 
 .calculator{
   background-color:#543200;

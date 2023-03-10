@@ -15,7 +15,7 @@
     
 <!-- timer -->
     <div class="time-title"> 
-        <h1 class="head-title">Time left to do important decisions. DO NOT DELAY!</h1>
+        <h1 class="head-title">Time left to make important decisions. DO NOT DELAY!</h1>
         <!-- <button id="btn-reverse">reverse timer:</button>  -->
     </div>
 
@@ -53,8 +53,15 @@
             <label for="gifs-only-option" class="gifs-check-label">Animated GIFs only</label>
             <input type="checkbox" id="gifs-only-option">
         </div>
-        <button class="get-image-btn" id="get-image-btn">Get Image</button>
+       <button class="get-img" id="get-img">Get Image</button>
         </div>
+        <div class="meme-modal" id="meme-modal">
+			<button class="meme-close-btn" id="meme-close-btn">X</button>
+			<div id="meme-modal-inner">
+            <div id="meme-modal-inner-img"> <!-- display image here!! --></div>
+            <h3 id="img-description"><!-- display text here!! --></h3>
+            </div>
+		</div>
     </div>
     <div class="calculator">
         <h2 class="title-features">Calculate your travel budget</h2>
@@ -77,7 +84,7 @@
                 <div class="modal-inner-loading">
                     <img src="images/adventure.png" class="loading">
                     <p id="uploadText">
-                        Thanky fo your registration...
+                        Thanks fo your registration...
                     </p>
                   </div>
               <div id="thanks-content">

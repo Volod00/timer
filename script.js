@@ -112,12 +112,64 @@ for (let countryIndex = 0; countryIndex < countries.length; countryIndex++){
 
 //countryPicker
 const emotionRadios = document.querySelector('#emotion-radios');
+const btnGetImg = document.getElementById('get-img');
+const gifsOnlyOption = document.getElementById('gifs-only-option');
+const memeModal = document.getElementById('meme-modal');
+const memeModalInnerImg = document.getElementById('meme-modal-inner-img');
+const text = document.getElementById('img-description');
+const closeMeme = document.getElementById('meme-close-btn');
+
+btnGetImg.addEventListener('click', renderCountryImage)
+
+function getMatchingArray(){
+  if(document.querySelector('input[type="radio"]:checked')){
+        const checkedEmotion = document.querySelector('input[type="radio"]:checked').value;
+        const isGif = gifsOnlyOption.checked;
+        const matchingArray = countryData.filter(function(country){
+          if(isGif){
+            return country.tags.includes(checkedEmotion) && country.isGif
+        }
+        else{
+            return country.tags.includes(checkedEmotion)
+          }
+        })
+        return matchingArray
+    }
+  }
+
+
+function getSingleCountryObject(){
+      const countryArray = getMatchingArray();
+      if (countryArray.length === 1){
+        return (countryArray[0])
+      } else {
+        const randomNum = Math.floor(Math.random * countryArray.length);
+        return countryArray[randomNum]
+      }
+
+}
+
+function renderCountryImage (){
+      const countryImg = getSingleCountryObject();
+      memeModal.style.display = 'flex';
+      memeModalInnerImg.innerHTML = `<img 
+                                  class="country-img" 
+                                  src="${countryImg.image}"
+                                  alt="${countryImg.alt}"
+                                  >`;
+      text.textContent =`${countryImg.text}`                                                         
+}
+
+
+closeMeme.addEventListener('click', closeModal)
+function closeModal(){
+  memeModal.style.display = 'none';
+}
 
 emotionRadios.addEventListener('change', highlightingOption);
-
 function highlightingOption (e){
       let emotionItems = document.getElementsByClassName('radio')
-      for(let emotionItem of emotionItems){      
+      for (let emotionItem of emotionItems){      
         emotionItem.classList.remove('highlight')
         }
         document.getElementById(e.target.id).parentElement.classList.add('highlight')
@@ -209,9 +261,5 @@ form.addEventListener("submit", function (e) {
 rejectBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
-
-fetch('db.json')
-.then(data =>data.json())
-.then(res => console.log(res));
 
 });
